@@ -145,7 +145,7 @@ section {
 }
 
 section:nth-child(even) { 
-   /* background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
+  background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
 }
 
 section h2 {
