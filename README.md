@@ -1,8 +1,6 @@
-# Mi Portfolio Web - [Tu Nombre]
+# Mi Portfolio Web - Andres Lizarazo
 
-[![GitHub Pages Deploy](https://github.com/[tu_usuario_github]/[nombre_del_repo_portfolio]/actions/workflows/pages/pages-build-deployment/badge.svg)](https://[tu_usuario_github].github.io/[nombre_del_repo_portfolio]/) <!-- Opcional: si usas GitHub Actions para el deploy -->
-<!-- Reemplaza con la URL de tu sitio desplegado -->
-[Ver el sitio en vivo](https://[tu_usuario_github].github.io/[nombre_del_repo_portfolio]/)
+[Ver el sitio en vivo](https://andres-lizarazo.github.io/andres-lizarazo.github.io/)
 
 <!-- Opcional: Añade una captura de pantalla o GIF de tu portfolio -->
 <!-- ![Captura de Pantalla del Portfolio](./ruta/a/tu/screenshot.png) -->
