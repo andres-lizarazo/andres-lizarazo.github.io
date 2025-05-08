@@ -531,65 +531,79 @@ footer a:hover {
   }
 }
 
-/* --- Estilos para la Sección de Portfolio Highlights --- */
+
+/* --- Estilos para la Sección de Portfolio Highlights (con foco en responsividad de imágenes) --- */
 #portfolio-highlights {
-  background-color: #fff; /* Un fondo blanco o un gris muy claro para destacar */
+  background-color: #fff; 
   padding: 60px 0;
-  border-top: 1px solid #e0e0e0; /* Opcional: línea divisoria superior */
-  border-bottom: 1px solid #e0e0e0; /* Opcional: línea divisoria inferior */
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .highlights-grid {
   display: grid;
   grid-template-columns: 1fr; /* Una columna por defecto para móviles */
-  gap: 40px; /* Espacio entre las columnas/filas */
+  gap: 30px; /* Espacio reducido para móviles */
 }
 
 .highlight-column {
-  text-align: center; /* Centra el contenido de la columna */
-  padding: 30px;
-  border: 1px solid #ddd; /* Borde sutil para cada "tarjeta" */
+  text-align: center; 
+  padding: 20px; /* Padding reducido para móviles */
+  border: 1px solid #ddd; 
   border-radius: var(--border-radius);
-  background-color: var(--card-background); /* Fondo de tarjeta si es diferente al de la sección */
+  background-color: var(--card-background); 
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Empuja el botón hacia abajo */
+  justify-content: space-between; 
 }
 
 .highlight-column h3 {
-  font-size: 1.8rem; /* Tamaño del título de columna */
-  color: var(--text-color); /* O var(--primary-color) */
-  margin-bottom: 25px;
+  font-size: 1.6rem; /* Ligeramente más pequeño para móviles */
+  color: var(--text-color); 
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .highlight-content {
-  margin-bottom: 30px; /* Espacio antes del botón */
-  flex-grow: 1; /* Permite que este contenido ocupe espacio disponible */
+  margin-bottom: 25px; 
+  flex-grow: 1; 
+  display: flex; /* Añadido para mejor control del contenido interno */
+  flex-direction: column; /* Para apilar imagen y texto */
+  align-items: center; /* Centra la imagen y el texto si son más estrechos */
+}
+
+/* Estilos para las imágenes dentro de .highlight-content */
+.highlight-content img { /* Regla general para ambas imágenes */
+  display: block;
+  height: auto;     /* Mantiene la proporción, la altura se ajusta al ancho */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  border-radius: 4px; /* Un pequeño redondeo para todas las imágenes aquí */
 }
 
 .tableau-logo {
-  max-width: 250px; /* Ajusta el tamaño del logo de Tableau */
-  height: auto;
-  margin-bottom: 20px;
+  width: 100%;      /* Ocupa el ancho disponible del contenedor .highlight-content */
+  max-width: 220px; /* Límite máximo de ancho para el logo de Tableau */
+                    /* Ajusta este valor según el tamaño deseado para el logo */
 }
 
 .certificate-preview {
-  max-width: 100%; /* La imagen del certificado ocupará el ancho disponible */
-  max-height: 300px; /* Limita la altura para que no sea demasiado grande */
-  object-fit: contain; /* Asegura que toda la imagen sea visible sin recortar, puede dejar espacio */
-  border: 1px solid #eee; /* Un borde ligero para la imagen del certificado */
-  margin-bottom: 20px;
-  border-radius: 4px;
+  width: 100%;      /* Ocupa el ancho disponible del contenedor .highlight-content */
+  max-width: 400px; /* Límite máximo de ancho para la previsualización del certificado */
+                    /* Ajusta este valor, considera que el contenedor .highlight-column ya tiene un padding */
+  max-height: 300px;/* Límite máximo de altura, especialmente útil para imágenes altas */
+  object-fit: contain; /* Mantiene la proporción y asegura que toda la imagen sea visible */
+  border: 1px solid #eaeaea; /* Borde sutil para la imagen del certificado */
 }
 
-.highlight-column p {
-  font-size: 1rem;
+.highlight-column p { /* Descripción debajo de las imágenes */
+  font-size: 0.95rem; /* Ligeramente más pequeño para móviles */
   color: #555;
   line-height: 1.6;
-  max-width: 400px; /* Limita el ancho del texto para mejor legibilidad */
+  max-width: 380px; 
   margin-left: auto;
   margin-right: auto;
 }
@@ -599,22 +613,38 @@ footer a:hover {
   background-color: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
-  padding: 10px 25px; /* Ajusta el padding si es necesario */
+  padding: 10px 25px; 
+  align-self: center; /* Centra el botón si la columna es flex */
+  max-width: 200px; /* Evita que el botón sea demasiado ancho */
+  width: auto; /* El botón toma el ancho de su contenido hasta el max-width */
 }
 
 .btn.btn-outline:hover {
   background-color: var(--primary-color);
   color: var(--light-text-color);
-  border-color: var(--primary-color); /* Asegura que el borde no desaparezca o cambie */
+  border-color: var(--primary-color); 
 }
 
-/* Media Query para dos columnas en pantallas más grandes */
+/* Media Query para dos columnas y ajustes en pantallas más grandes */
 @media (min-width: 768px) {
   .highlights-grid {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-      gap: 30px; /* Espacio entre columnas */
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 40px; 
   }
   .highlight-column {
-      padding: 30px; /* Puedes ajustar el padding para pantallas más grandes */
+      padding: 30px; 
+  }
+  .highlight-column h3 {
+      font-size: 1.8rem; 
+  }
+  .highlight-column p {
+      font-size: 1rem;
+  }
+  .tableau-logo {
+      max-width: 250px; /* Puedes aumentar ligeramente el max-width en pantallas grandes */
+  }
+  .certificate-preview {
+      max-width: 450px; /* Puedes aumentar ligeramente el max-width en pantallas grandes */
+      max-height: 350px;
   }
 }
