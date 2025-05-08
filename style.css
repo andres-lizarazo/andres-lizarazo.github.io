@@ -44,26 +44,26 @@ body {
 .hero {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--light-text-color);
-  padding: 40px 0 60px; 
+  padding: 40px 0 60px;
   text-align: center;
-  position: relative; /* Para el efecto de onda si se desea agregar */
+  position: relative;
 }
 
 nav {
-  max-width: 1100px; 
+  max-width: 1100px;
   margin: 0 auto 30px auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Para asegurar que esté sobre cualquier elemento de fondo del hero */
+  position: relative;
   z-index: 10;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px; /* Espacio entre items del menú */
+  gap: 15px;
 }
 
 nav ul li a {
@@ -76,7 +76,7 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-nav ul li a.active { /* Estilo para el enlace activo (requiere JS adicional o se puede hacer con scroll spy) */
+nav ul li a.active {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
@@ -97,15 +97,15 @@ nav ul li a.active { /* Estilo para el enlace activo (requiere JS adicional o se
   color: var(--primary-color);
 }
 
-.header-content { 
-  margin-top: 20px; 
+.header-content {
+  margin-top: 20px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px; 
+  padding: 0 20px;
 }
 
-.header-content h1 { 
+.header-content h1 {
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-weight: 700;
@@ -141,11 +141,11 @@ nav ul li a.active { /* Estilo para el enlace activo (requiere JS adicional o se
 
 /* Estilo para secciones */
 section {
-  padding: 60px 0; /* Espaciado vertical entre secciones */
+  padding: 60px 0;
 }
 
-section:nth-child(even) { 
-  background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
+section:nth-child(even) {
+   /* background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
 }
 
 section h2 {
@@ -158,7 +158,7 @@ section h2 {
   font-weight: 700;
 }
 
-section h2::after { 
+section h2::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -187,7 +187,7 @@ section h2::after {
   margin-bottom: 30px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  border-left: 5px solid var(--primary-color); 
+  border-left: 5px solid var(--primary-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -207,11 +207,11 @@ section h2::after {
   font-style: italic;
   color: #555;
   margin-bottom: 15px;
-  display: block; /* Para asegurar que el margen inferior funcione bien */
+  display: block;
 }
 
 .experiencia-item ul {
-  list-style: none; 
+  list-style: none;
   padding-left: 0;
 }
 
@@ -223,7 +223,7 @@ section h2::after {
 }
 
 .experiencia-item ul li::before {
-  content: '▹'; /* O usa '•', '✓', '›' etc. */
+  content: '▹';
   position: absolute;
   left: 0;
   color: var(--primary-color);
@@ -283,7 +283,7 @@ section h2::after {
 
 
 /* Estilos para la sección de Contacto */
-#contacto .container p { /* Estilo para el párrafo introductorio de contacto */
+#contacto .container > p { /* Estilo para el párrafo introductorio de contacto */
     text-align: center;
     margin-bottom: 30px;
     font-size: 1.1rem;
@@ -309,7 +309,7 @@ section h2::after {
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contacto input[type="text"]:focus,
@@ -317,7 +317,7 @@ section h2::after {
 #contacto textarea:focus {
   border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(78, 84, 200, 0.2);
+  box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.25);
 }
 
 #contacto textarea {
@@ -325,23 +325,24 @@ section h2::after {
   resize: vertical;
 }
 
-#contacto button[type="submit"] { /* Aplicamos la clase .btn, pero podemos ser más específicos */
+#contacto button[type="submit"] {
   background-color: var(--primary-color);
   color: var(--light-text-color);
-  /* Otros estilos ya vienen de .btn */
+  /* Otros estilos ya vienen de .btn, pero puedes sobreescribir aquí si es necesario */
 }
 
 #contacto button[type="submit"]:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Diferente hover para el botón de enviar */
 }
 
 /* Footer */
 footer {
-  background-color: #333; /* Un color oscuro para el footer */
-  color: #ccc;
+  background-color: #2c3e50; /* Un color oscuro azulado para el footer */
+  color: #bdc3c7; /* Texto más claro para el footer */
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
   font-size: 0.9rem;
+  margin-top: 30px; /* Espacio antes del footer */
 }
 
 footer p {
@@ -355,6 +356,7 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+  color: var(--light-text-color);
 }
 
 
@@ -376,14 +378,14 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100%; /* Para que los enlaces ocupen el ancho */
+    width: 100%;
   }
   nav ul li {
     width: 100%;
     text-align: center;
   }
   nav ul li a {
-    display: block; /* Para que ocupen todo el ancho del li */
+    display: block;
     padding: 10px;
   }
 
@@ -404,13 +406,16 @@ footer a:hover {
   }
 
   #contacto form {
-    padding: 20px;
+    padding: 25px;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    font-size: 15px; /* Ligeramente más pequeño en móviles */
+  }
   .header-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem; /* Ajustado para móviles */
   }
 
   .header-content p {
@@ -418,34 +423,44 @@ footer a:hover {
   }
 
   .btn {
-    font-size: 0.95rem;
-    padding: 10px 20px;
+    font-size: 0.9rem; /* Botones ligeramente más pequeños */
+    padding: 10px 22px;
   }
 
   section {
     padding: 40px 0;
   }
   section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
+    font-size: 1.7rem; /* Títulos de sección más pequeños */
+    margin-bottom: 35px;
+  }
+  section h2::after {
+    width: 50px;
+    height: 3px;
   }
 
   .experiencia-item {
     padding: 20px;
   }
   .experiencia-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+  }
+  .experiencia-item .experiencia-cargo {
+    font-size: 0.95rem;
   }
 
   .certifications-list li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 12px 15px;
   }
 
   #contacto input[type="text"],
   #contacto input[type="email"],
   #contacto textarea {
-    padding: 10px;
+    padding: 10px 12px;
     font-size: 0.95rem;
+  }
+  #contacto form {
+    padding: 20px;
   }
 }

@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrés Lizarazo - Ciencia de Datos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- Sección de Bienvenida -->
-    <header class="hero"> <nav>
+    <header class="hero">
+      <nav>
         <ul>
           <li><a href="#sobre-mi" id="nav-sobre-mi">Sobre mí</a></li>
           <li><a href="#experiencia" id="nav-experiencia">Experiencia</a></li>
@@ -21,7 +22,7 @@
         <!-- Botón de idioma -->
         <button id="langToggle">EN</button>
       </nav>
-    
+
       <div class="header-content">
         <h1 id="main-title">Hola, soy Andrés Lizarazo</h1>
         <p id="main-subtitle">Analista Comercial y Científico de Datos en Mercado Libre</p>
@@ -32,33 +33,34 @@
     <!-- Sección sobre mí -->
     <section id="sobre-mi">
         <div class="container">
-            <h2>Sobre mí</h2>
-            <p>Soy Ingeniero Industrial con especialización en Ciencia de Datos. Me apasiona trabajar con grandes volúmenes de datos, optimizar procesos, y aplicar Machine Learning para generar valor en la toma de decisiones estratégicas. Busco continuamente nuevos desafíos para expandir mis conocimientos y contribuir al éxito de proyectos innovadores.</p>
+            <h2 id="sobre-mi-title">Sobre mí</h2>
+            <p id="sobre-mi-content">Soy Ingeniero Industrial con especialización en Ciencia de Datos. Me apasiona trabajar con grandes volúmenes de datos, optimizar procesos, y aplicar Machine Learning para generar valor en la toma de decisiones estratégicas. Busco continuamente nuevos desafíos para expandir mis conocimientos y contribuir al éxito de proyectos innovadores.</p>
         </div>
     </section>
 
     <!-- Sección de Experiencia -->
     <section id="experiencia">
         <div class="container">
-            <h2>Experiencia</h2>
+            <h2 id="experiencia-title">Experiencia</h2>
             <div class="experiencia-item">
-                <h3>Mercado Libre Colombia Ltda.</h3>
-                <p class="experiencia-cargo">Analista Comercial (Ago 2021 - Sept 2024)</p>
+                <h3 id="exp-ml-company">Mercado Libre Colombia Ltda.</h3>
+                <p class="experiencia-cargo" id="exp-ml-cargo">Analista Comercial (Ago 2021 - Sept 2024)</p>
                 <ul>
-                    <li>Gestioné grandes volúmenes de datos para el análisis de ventas y desempeño de portafolio.</li>
-                    <li>Aumenté las ventas en un 30% en el portafolio de autopartes mediante análisis de datos dirigido y estrategias de optimización.</li>
-                    <li>Lideré la incorporación y el desarrollo comercial de más de 50 tiendas oficiales en la plataforma.</li>
+                    <li id="exp-ml-desc1">Gestioné grandes volúmenes de datos para el análisis de ventas y desempeño de portafolio.</li>
+                    <li id="exp-ml-desc2">Aumenté las ventas en un 30% en el portafolio de autopartes mediante análisis de datos dirigido y estrategias de optimización.</li>
+                    <li id="exp-ml-desc3">Lideré la incorporación y el desarrollo comercial de más de 50 tiendas oficiales en la plataforma.</li>
                 </ul>
             </div>
-            <!-- Puedes añadir más items de experiencia aquí -->
+            <!-- Puedes añadir más items de experiencia aquí, dándoles IDs si quieres traducirlos -->
         </div>
     </section>
 
     <!-- Sección de Habilidades -->
     <section id="habilidades">
         <div class="container">
-            <h2>Habilidades</h2>
+            <h2 id="habilidades-title">Habilidades</h2>
             <ul class="skills-list">
+                <!-- No es necesario ID para cada habilidad si no se traducen individualmente, pero podrías añadirlos -->
                 <li>Python (Pandas, NumPy, Scipy), SQL</li>
                 <li>Machine Learning: TensorFlow, Keras, Scikit-Learn</li>
                 <li>Visualización de Datos: Power BI, Tableau, Matplotlib, Seaborn</li>
@@ -72,8 +74,9 @@
     <!-- Sección de Certificaciones -->
     <section id="certificaciones">
         <div class="container">
-            <h2>Certificaciones</h2>
+            <h2 id="certificaciones-title">Certificaciones</h2>
             <ul class="certifications-list">
+                 <!-- No es necesario ID para cada certificación si no se traducen individualmente, pero podrías añadirlos -->
                 <li>Microsoft Certified: Azure Data Scientist Associate (DP-100) - 2025</li>
                 <li>Data Science Training Program - Geeksforgeeks - 2025</li>
                 <li>Curso de Deep Learning con TensorFlow y Python - Platzi - 2025</li>
@@ -84,26 +87,26 @@
     <!-- Sección de Contacto -->
     <section id="contacto">
         <div class="container">
-            <h2>Contacto</h2>
-            <p>Si tienes alguna pregunta o propuesta, no dudes en contactarme.</p>
+            <h2 id="contacto-title">Contacto</h2>
+            <p id="contacto-intro">Si tienes alguna pregunta o propuesta, no dudes en contactarme.</p>
             <form action="mailto:tuemail@ejemplo.com" method="POST" enctype="text/plain">
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu email" required>
-                <textarea name="mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea>
-                <button type="submit" class="btn">Enviar Mensaje</button>
+                <input type="text" name="nombre" id="form-nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" id="form-email" placeholder="Tu email" required>
+                <textarea name="mensaje" id="form-mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea>
+                <button type="submit" class="btn" id="form-submit-button">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Andrés Lizarazo. Todos los derechos reservados.</p>
+        <p id="footer-text">© 2025 Andrés Lizarazo. Todos los derechos reservados.</p>
         <!-- Opcional: Añade enlaces a tus redes (LinkedIn, GitHub) -->
         <!-- <p>
-            <a href="https://linkedin.com/in/tu_usuario" target="_blank">LinkedIn</a> | 
+            <a href="https://linkedin.com/in/tu_usuario" target="_blank">LinkedIn</a> |
             <a href="https://github.com/tu_usuario" target="_blank">GitHub</a>
         </p> -->
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
