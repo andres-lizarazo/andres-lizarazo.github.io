@@ -10,8 +10,7 @@
 
 <body>
     <!-- Sección de Bienvenida -->
-    <header>
-      <nav>
+    <header class="hero"> <nav>
         <ul>
           <li><a href="#sobre-mi" id="nav-sobre-mi">Sobre mí</a></li>
           <li><a href="#experiencia" id="nav-experiencia">Experiencia</a></li>
@@ -32,62 +31,79 @@
 
     <!-- Sección sobre mí -->
     <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Soy Ingeniero Industrial con especialización en Ciencia de Datos. Me apasiona trabajar con grandes volúmenes de datos, optimizar procesos, y aplicar Machine Learning para generar valor...</p>
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Soy Ingeniero Industrial con especialización en Ciencia de Datos. Me apasiona trabajar con grandes volúmenes de datos, optimizar procesos, y aplicar Machine Learning para generar valor en la toma de decisiones estratégicas. Busco continuamente nuevos desafíos para expandir mis conocimientos y contribuir al éxito de proyectos innovadores.</p>
+        </div>
     </section>
 
     <!-- Sección de Experiencia -->
     <section id="experiencia">
-        <h2>Experiencia</h2>
-        <div class="experiencia-item">
-            <h3>Mercado Libre Colombia Ltda.</h3>
-            <p>Analista Comercial (Ago 2021 - Sept 2024)</p>
-            <ul>
-                <li>Gestioné grandes volúmenes de datos para ventas y desempeño de portafolio.</li>
-                <li>Aumenté las ventas en un 30% en el portafolio de autopartes mediante análisis de datos dirigido.</li>
-                <li>Lideré la incorporación de más de 50 tiendas oficiales.</li>
-            </ul>
+        <div class="container">
+            <h2>Experiencia</h2>
+            <div class="experiencia-item">
+                <h3>Mercado Libre Colombia Ltda.</h3>
+                <p class="experiencia-cargo">Analista Comercial (Ago 2021 - Sept 2024)</p>
+                <ul>
+                    <li>Gestioné grandes volúmenes de datos para el análisis de ventas y desempeño de portafolio.</li>
+                    <li>Aumenté las ventas en un 30% en el portafolio de autopartes mediante análisis de datos dirigido y estrategias de optimización.</li>
+                    <li>Lideré la incorporación y el desarrollo comercial de más de 50 tiendas oficiales en la plataforma.</li>
+                </ul>
+            </div>
+            <!-- Puedes añadir más items de experiencia aquí -->
         </div>
     </section>
 
     <!-- Sección de Habilidades -->
     <section id="habilidades">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Python, SQL</li>
-            <li>TensorFlow, Keras, Scikit-Learn</li>
-            <li>Power BI, Tableau</li>
-            <li>Azure Machine Learning</li>
-            <li>Procesamiento de Lenguaje Natural (NLP)</li>
-        </ul>
+        <div class="container">
+            <h2>Habilidades</h2>
+            <ul class="skills-list">
+                <li>Python (Pandas, NumPy, Scipy), SQL</li>
+                <li>Machine Learning: TensorFlow, Keras, Scikit-Learn</li>
+                <li>Visualización de Datos: Power BI, Tableau, Matplotlib, Seaborn</li>
+                <li>Cloud: Azure Machine Learning, AWS Sagemaker (Básico)</li>
+                <li>Procesamiento de Lenguaje Natural (NLP)</li>
+                <li>Análisis Estadístico y Modelado Predictivo</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Sección de Certificaciones -->
     <section id="certificaciones">
-        <h2>Certificaciones</h2>
-        <ul>
-            <li>Microsoft Certified: Azure Data Scientist Associate (2025)</li>
-            <li>Data Science Training Program - Geeksforgeeks (2025)</li>
-            <li>Curso de Deep Learning con TensorFlow - Platzi (2025)</li>
-        </ul>
+        <div class="container">
+            <h2>Certificaciones</h2>
+            <ul class="certifications-list">
+                <li>Microsoft Certified: Azure Data Scientist Associate (DP-100) - 2025</li>
+                <li>Data Science Training Program - Geeksforgeeks - 2025</li>
+                <li>Curso de Deep Learning con TensorFlow y Python - Platzi - 2025</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Sección de Contacto -->
     <section id="contacto">
-        <h2>Contacto</h2>
-        <form action="mailto:tuemail@ejemplo.com" method="POST" enctype="text/plain">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu email" required>
-            <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Si tienes alguna pregunta o propuesta, no dudes en contactarme.</p>
+            <form action="mailto:tuemail@ejemplo.com" method="POST" enctype="text/plain">
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <textarea name="mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
     </section>
 
     <footer>
         <p>© 2025 Andrés Lizarazo. Todos los derechos reservados.</p>
+        <!-- Opcional: Añade enlaces a tus redes (LinkedIn, GitHub) -->
+        <!-- <p>
+            <a href="https://linkedin.com/in/tu_usuario" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/tu_usuario" target="_blank">GitHub</a>
+        </p> -->
     </footer>
 
     <script src="js/scripts.js"></script>
 </body>
-
 </html>

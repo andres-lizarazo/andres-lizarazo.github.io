@@ -1,120 +1,451 @@
 /* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* Reset básico */
+/* Reset básico y variables CSS */
+:root {
+  --primary-color: #4e54c8;
+  --secondary-color: #8f94fb;
+  --text-color: #333;
+  --light-text-color: #f9f9f9;
+  --background-color: #f4f7f6;
+  --card-background: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth; /* Para un desplazamiento suave en los enlaces internos */
 }
 
-/* Hero principal */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased; /* Mejora la renderización de fuentes */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor principal para centrar contenido de secciones */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero principal (antes header) */
 .hero {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
-  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text-color);
+  padding: 40px 0 60px; 
   text-align: center;
+  position: relative; /* Para el efecto de onda si se desea agregar */
 }
 
 nav {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1100px; 
+  margin: 0 auto 30px auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Para asegurar que esté sobre cualquier elemento de fondo del hero */
+  z-index: 10;
 }
 
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* Espacio entre items del menú */
+}
+
+nav ul li a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Estilo para el enlace activo (requiere JS adicional o se puede hacer con scroll spy) */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 #langToggle {
-  background: none;
-  border: 2px solid white;
-  color: white;
-  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--light-text-color);
+  color: var(--light-text-color);
+  padding: 8px 18px;
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #langToggle:hover {
-  background: white;
-  color: #4e54c8;
+  background: var(--light-text-color);
+  color: var(--primary-color);
 }
 
-.hero-content {
-  margin-top: 40px;
+.header-content { 
+  margin-top: 20px; 
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px; 
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
+.header-content h1 { 
+  font-size: 2.8rem;
   margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.hero-content p {
+.header-content p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  opacity: 0.9;
 }
 
-.btn-group .btn {
-  background-color: white;
-  color: #4e54c8;
-  padding: 12px 26px;
+/* Estilo general para botones */
+.btn {
+  background-color: var(--light-text-color);
+  color: var(--primary-color);
+  padding: 12px 28px;
   text-decoration: none;
   font-weight: 600;
   border-radius: 30px;
-  transition: background 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
-  background-color: #e6e6e6;
+  background-color: #e8e8e8;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
+/* Estilo para secciones */
+section {
+  padding: 60px 0; /* Espaciado vertical entre secciones */
+}
+
+section:nth-child(even) { 
+   /* background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+section h2::after { 
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* Estilos específicos para "Sobre mí" */
+#sobre-mi p {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+/* Estilos para la sección de Experiencia */
+.experiencia-item {
+  background: var(--card-background);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--primary-color); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experiencia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.experiencia-item h3 {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.experiencia-item .experiencia-cargo {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+  display: block; /* Para asegurar que el margen inferior funcione bien */
+}
+
+.experiencia-item ul {
+  list-style: none; 
+  padding-left: 0;
+}
+
+.experiencia-item ul li {
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.experiencia-item ul li::before {
+  content: '▹'; /* O usa '•', '✓', '›' etc. */
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Estilos para la sección de Habilidades */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skills-list li {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary-color);
+}
+
+/* Estilos para la sección de Certificaciones */
+.certifications-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.certifications-list li {
+  background: var(--card-background);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 1.05rem;
+  border-left: 4px solid var(--secondary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.certifications-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilos para la sección de Contacto */
+#contacto .container p { /* Estilo para el párrafo introductorio de contacto */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#contacto input[type="text"]:focus,
+#contacto input[type="email"]:focus,
+#contacto textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(78, 84, 200, 0.2);
+}
+
+#contacto textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contacto button[type="submit"] { /* Aplicamos la clase .btn, pero podemos ser más específicos */
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  /* Otros estilos ya vienen de .btn */
+}
+
+#contacto button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+  background-color: #333; /* Un color oscuro para el footer */
+  color: #ccc;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .hero-content h2 {
-    font-size: 2rem;
+  .header-content h1 {
+    font-size: 2.2rem;
   }
 
-  .hero-content p {
-    font-size: 1rem;
+  .header-content p {
+    font-size: 1.1rem;
   }
 
   nav {
     flex-direction: column;
+    gap: 15px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    width: 100%; /* Para que los enlaces ocupen el ancho */
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a {
+    display: block; /* Para que ocupen todo el ancho del li */
+    padding: 10px;
   }
 
   #langToggle {
-    padding: 6px 14px;
+    margin-top: 10px;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skills-list {
+    gap: 10px;
+  }
+  .skills-list li {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  #contacto form {
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-content h2 {
-    font-size: 1.6rem;
+  .header-content h1 {
+    font-size: 1.8rem;
   }
 
-  .hero-content p {
-    font-size: 0.95rem;
+  .header-content p {
+    font-size: 1rem;
   }
 
-  .btn-group .btn {
+  .btn {
     font-size: 0.95rem;
     padding: 10px 20px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .experiencia-item {
+    padding: 20px;
+  }
+  .experiencia-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .certifications-list li {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+
+  #contacto input[type="text"],
+  #contacto input[type="email"],
+  #contacto textarea {
+    padding: 10px;
+    font-size: 0.95rem;
   }
 }
