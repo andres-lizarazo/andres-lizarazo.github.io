@@ -1,60 +1,117 @@
-/* Estilos básicos */
-body {
-    font-family: Arial, sans-serif;
+/* styles.css */
+
+/* Reseteo de márgenes y padding */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
     color: #333;
-}
-
-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
+    line-height: 1.6;
+    margin: 0;
     padding: 0;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
+/* Fondo del header */
+header {
+    background: linear-gradient(135deg, #5c6bc0, #3f51b5);
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid #2c3e50;
 }
 
-header .header-content h1 {
-    margin: 20px 0;
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 header .btn {
-    background-color: #fff;
-    color: #007BFF;
-    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-section {
-    padding: 20px;
+header .btn:hover {
+    background-color: #e040fb;
+}
+
+header button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #eeeeee;
+}
+
+/* Contenido principal */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
     margin: 20px 0;
 }
 
-h2 {
-    color: #007BFF;
+.language-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+.language-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .language-content h1 {
+        font-size: 2rem;
+    }
+
+    .language-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 12px 25px;
+    }
 }
