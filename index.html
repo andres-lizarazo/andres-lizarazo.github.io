@@ -1,27 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrés Lizarazo | Portafolio</title>
-  <style>
-    body { font-family: sans-serif; margin: 2em; background: #f9f9f9; color: #333; }
-    h1 { color: #2c3e50; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 0.5em 0; }
-    a { color: #2980b9; text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrés Lizarazo - Ciencia de Datos</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>👋 Hola, soy Andrés Lizarazo</h1>
-  <p>Soy científico de datos y este es mi portafolio.</p>
+    <!-- Sección de Bienvenida -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#certificaciones">Certificaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Hola, soy Andrés Lizarazo</h1>
+            <p>Analista Comercial y Científico de Datos en Mercado Libre</p>
+            <a href="CV_Andres_Lizarazo.pdf" class="btn">Descargar mi CV</a>
+        </div>
+    </header>
 
-  <h2>🧠 Proyectos destacados</h2>
-  <ul>
-    <li><a href="https://github.com/andres-lizarazo/proyecto1" target="_blank">🔍 Análisis de datos en Python</a></li>
-    <li><a href="https://github.com/andres-lizarazo/proyecto2" target="_blank">📈 Modelo de predicción con Machine Learning</a></li>
-  </ul>
+    <!-- Sección sobre mí -->
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Soy Ingeniero Industrial con especialización en Ciencia de Datos. Me apasiona trabajar con grandes volúmenes de datos, optimizar procesos, y aplicar Machine Learning para generar valor...</p>
+    </section>
 
-  <p>🌐 También puedes encontrarme en <a href="https://github.com/andres-lizarazo" target="_blank">GitHub</a>.</p>
+    <!-- Sección de Experiencia -->
+    <section id="experiencia">
+        <h2>Experiencia</h2>
+        <div class="experiencia-item">
+            <h3>Mercado Libre Colombia Ltda.</h3>
+            <p>Analista Comercial (Ago 2021 - Sept 2024)</p>
+            <ul>
+                <li>Gestioné grandes volúmenes de datos para ventas y desempeño de portafolio.</li>
+                <li>Aumenté las ventas en un 30% en el portafolio de autopartes mediante análisis de datos dirigido.</li>
+                <li>Lideré la incorporación de más de 50 tiendas oficiales.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Python, SQL</li>
+            <li>TensorFlow, Keras, Scikit-Learn</li>
+            <li>Power BI, Tableau</li>
+            <li>Azure Machine Learning</li>
+            <li>Procesamiento de Lenguaje Natural (NLP)</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Certificaciones -->
+    <section id="certificaciones">
+        <h2>Certificaciones</h2>
+        <ul>
+            <li>Microsoft Certified: Azure Data Scientist Associate (2025)</li>
+            <li>Data Science Training Program - Geeksforgeeks (2025)</li>
+            <li>Curso de Deep Learning con TensorFlow - Platzi (2025)</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="mailto:tuemail@ejemplo.com" method="POST" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Andrés Lizarazo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
+
 </html>
