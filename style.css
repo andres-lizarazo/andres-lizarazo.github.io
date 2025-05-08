@@ -530,3 +530,91 @@ footer a:hover {
     height: 26px;
   }
 }
+
+/* --- Estilos para la Sección de Portfolio Highlights --- */
+#portfolio-highlights {
+  background-color: #fff; /* Un fondo blanco o un gris muy claro para destacar */
+  padding: 60px 0;
+  border-top: 1px solid #e0e0e0; /* Opcional: línea divisoria superior */
+  border-bottom: 1px solid #e0e0e0; /* Opcional: línea divisoria inferior */
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto para móviles */
+  gap: 40px; /* Espacio entre las columnas/filas */
+}
+
+.highlight-column {
+  text-align: center; /* Centra el contenido de la columna */
+  padding: 30px;
+  border: 1px solid #ddd; /* Borde sutil para cada "tarjeta" */
+  border-radius: var(--border-radius);
+  background-color: var(--card-background); /* Fondo de tarjeta si es diferente al de la sección */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja el botón hacia abajo */
+}
+
+.highlight-column h3 {
+  font-size: 1.8rem; /* Tamaño del título de columna */
+  color: var(--text-color); /* O var(--primary-color) */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlight-content {
+  margin-bottom: 30px; /* Espacio antes del botón */
+  flex-grow: 1; /* Permite que este contenido ocupe espacio disponible */
+}
+
+.tableau-logo {
+  max-width: 250px; /* Ajusta el tamaño del logo de Tableau */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.certificate-preview {
+  max-width: 100%; /* La imagen del certificado ocupará el ancho disponible */
+  max-height: 300px; /* Limita la altura para que no sea demasiado grande */
+  object-fit: contain; /* Asegura que toda la imagen sea visible sin recortar, puede dejar espacio */
+  border: 1px solid #eee; /* Un borde ligero para la imagen del certificado */
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.highlight-column p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 400px; /* Limita el ancho del texto para mejor legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo para el botón con borde (outline) */
+.btn.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 25px; /* Ajusta el padding si es necesario */
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  border-color: var(--primary-color); /* Asegura que el borde no desaparezca o cambie */
+}
+
+/* Media Query para dos columnas en pantallas más grandes */
+@media (min-width: 768px) {
+  .highlights-grid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+      gap: 30px; /* Espacio entre columnas */
+  }
+  .highlight-column {
+      padding: 30px; /* Puedes ajustar el padding para pantallas más grandes */
+  }
+}
