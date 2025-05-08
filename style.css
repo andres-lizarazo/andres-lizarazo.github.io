@@ -145,7 +145,7 @@ section {
 }
 
 section:nth-child(even) {
-   /* background-color: #eef1f0; */ /* Descomentar si quieres fondos alternos */
+   background-color: #eef1f0;  /* Descomentar si quieres fondos alternos */
 }
 
 section h2 {
@@ -462,5 +462,95 @@ footer a:hover {
   }
   #contacto form {
     padding: 20px;
+  }
+}
+/* Estilos para la nueva sección de Contacto Info */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 30px; /* Espacio entre items */
+  max-width: 500px; /* Limita el ancho para que no se extienda demasiado */
+  margin: 40px auto 0 auto; /* Centra el bloque y le da espacio del título */
+  text-align: left; /* Alineación del texto dentro de cada item */
+}
+
+.contact-item {
+  padding-bottom: 20px; /* Un pequeño espacio o borde inferior */
+  border-bottom: 1px solid #e0e0e0; /* Línea divisoria sutil */
+}
+.contact-item:last-child {
+  border-bottom: none; /* Sin borde en el último item */
+  padding-bottom: 0;
+}
+
+.contact-item h4 {
+  font-size: 0.9rem; /* Tamaño de los labels: LOCATION, PHONE, etc. */
+  font-weight: 700; /* Más grueso, como en la imagen */
+  text-transform: uppercase;
+  color: var(--text-color); /* O un gris oscuro como #444 */
+  margin-bottom: 10px; /* Espacio entre el label y el valor */
+  letter-spacing: 0.5px; /* Un poco de espacio entre letras */
+}
+
+.contact-item p,
+.contact-item p a {
+  font-size: 1.05rem; /* Tamaño del texto de la información */
+  color: #555; /* Un gris un poco más claro para el valor */
+  line-height: 1.6;
+  text-decoration: none; /* Quitar subrayado por defecto */
+}
+
+.contact-item p a {
+  color: var(--primary-color); /* Color del enlace (teléfono, email) */
+  text-decoration: underline; /* Subrayado como en la imagen */
+  text-decoration-color: #ccc; /* Un color de subrayado más sutil */
+  text-underline-offset: 4px; /* Espacio entre texto y subrayado */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.contact-item p a:hover {
+  color: var(--secondary-color); /* Cambio de color al pasar el mouse */
+  text-decoration-color: var(--secondary-color);
+}
+
+.social-icons-contact {
+  display: flex;
+  gap: 15px; /* Espacio entre iconos sociales */
+  margin-top: 5px; /* Pequeño espacio si viene después de un label */
+}
+
+.social-icons-contact a {
+  display: inline-flex; /* Para centrar el SVG/icono dentro del 'a' */
+  align-items: center;
+  justify-content: center;
+  width: 44px;  /* Tamaño del círculo contenedor del icono */
+  height: 44px; /* Tamaño del círculo contenedor del icono */
+  border-radius: 50%;
+  border: 1px solid #d0d0d0; /* Borde del círculo */
+  color: var(--text-color); /* Color del icono SVG si es 'currentColor' */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons-contact a:hover {
+  background-color: #f0f0f0; /* Un fondo sutil al pasar el mouse */
+  border-color: var(--primary-color);
+  color: var(--primary-color); /* Cambia color del icono en hover */
+}
+
+.social-icons-contact svg {
+  width: 22px; /* Tamaño del gráfico del icono SVG */
+  height: 22px;
+  /* Si el SVG no toma el color del 'a' en hover, asegúrate que el 'fill' o 'stroke' 
+     del SVG esté puesto a 'currentColor' o que no tenga un color fijo. */
+}
+
+
+/* Media query para mejorar la presentación en pantallas más anchas si se quiere */
+@media (min-width: 768px) {
+  .contact-info-grid {
+
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 40px 60px; 
+      text-align: left;   
   }
 }
