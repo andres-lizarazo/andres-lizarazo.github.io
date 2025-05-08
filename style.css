@@ -327,50 +327,83 @@ section h2::after {
   color: #6c757d;
   margin-left: 5px;
 }
+/* --- (CSS Común para .skills-section, .section-title, .container, body - como antes) --- */
+/* --- Estilos para la Lista de Competencias Adicionales (Diseño 2 - Píldoras Compactas) --- */
 
-.competencies-list {
+.competencies-list.compact-tags { /* Aplicamos los estilos base de la lista */
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 800px; /* Ancho máximo del contenedor de píldoras */
-  text-align: center; /* Centrar las píldoras si no llenan el ancho */
+  max-width: 900px; /* Puedes ajustar el ancho máximo del contenedor general */
+  text-align: center;
 
-  /* Para que los elementos <li> se comporten como inline-block y fluyan */
   display: flex;
-  flex-wrap: wrap; /* Permite que las píldoras pasen a la siguiente línea */
-  justify-content: center; /* Centra las píldoras en la línea */
-  gap: 12px 15px; /* Espacio vertical y horizontal entre píldoras */
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar las tarjetas en la línea */
+  gap: 20px; /* Espacio entre las tarjetas/píldoras */
 }
 
-.competencies-list li {
-  background-color: #5c6bc0; /* Un color índigo o morado suave */
+.competencies-list.compact-tags li {
+  background-color: #677BC4; /* Un azul/morado diferente, puedes ajustar */
   color: white;
-  padding: 10px 20px;
-  border-radius: 25px; /* Píldoras bien redondeadas */
-  font-size: 0.95em; /* Un poco más pequeño para que quepan más */
+  padding: 18px; /* Padding uniforme para ayudar a la forma cuadrada */
+  border-radius: 12px; /* Bordes redondeados, pero no totalmente tipo píldora */
+  font-size: 0.9em;   /* Ajusta según la cantidad de texto */
   font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  /* display: inline-block; /* No necesario si el ul es flex */
-  /* margin: 5px 7px; /* No necesario si el ul usa gap */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* --- Clave para la forma más cuadrada/compacta --- */
+  width: 180px;       /* Ancho fijo o min/max para controlar la forma */
+  min-height: 100px;  /* Altura mínima para permitir varias líneas y dar forma */
+  /* max-width: 200px;    /* Opcional: si quieres un límite superior al ancho */
+
+  display: flex; /* Para centrar el contenido interno */
+  flex-direction: column; /* Alinear el contenido verticalmente si hay espacio extra */
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center;    /* Centrar contenido horizontalmente (texto ya está centrado por text-align en .competencies-list) */
+  text-align: center;     /* Asegurar que el texto dentro del <li> esté centrado */
+  line-height: 1.4;       /* Mejorar legibilidad si hay múltiples líneas */
+  box-sizing: border-box; /* Para que padding y border no aumenten el width/height total */
 }
 
-.competencies-list li:hover {
-  background-color: #3f51b5; /* Un tono más oscuro al pasar el mouse */
-  transform: translateY(-2px);
+.competencies-list.compact-tags li:hover {
+  background-color: #5064A7;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .competencies-list {
-      gap: 10px 12px;
+  .competencies-list.compact-tags {
+      gap: 15px;
+      max-width: 100%; /* Permitir que ocupe todo el ancho disponible */
   }
-  .competencies-list li {
-      font-size: 0.9em;
-      padding: 8px 15px;
+  .competencies-list.compact-tags li {
+      width: 150px;       /* Ajustar tamaño para pantallas medianas */
+      min-height: 90px;
+      padding: 15px;
+      font-size: 0.85em;
   }
 }
 
+@media (max-width: 480px) {
+  .competencies-list.compact-tags {
+      /* Podrías hacer que se apilen en una columna si son muy pequeñas */
+      /* O mantener el flex-wrap y ajustar el tamaño de las tarjetas */
+      gap: 12px;
+  }
+  .competencies-list.compact-tags li {
+      width: calc(50% - 12px); /* Dos columnas en pantallas muy pequeñas, ajustando por el gap */
+      /* O si prefieres una sola columna: */
+      /* width: 80%; */
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      min-height: 80px;
+      padding: 12px;
+      font-size: 0.8em;
+  }
+}
 .certifications-list {
   list-style: none;
   padding: 0;
