@@ -1,44 +1,58 @@
-// script.js
-
-// Obtener el botón por su ID
-const changeColorBtn = document.getElementById('changeColorBtn');
-
-// Función para cambiar el color de fondo de la página
-function changeBackgroundColor() {
-    // Generar un color aleatorio
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    // Cambiar el fondo de la página
-    document.body.style.backgroundColor = randomColor;
-}
-
-// Asignar la función al evento click del botón
-changeColorBtn.addEventListener('click', changeBackgroundColor);
-
-
-// script.js
-
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("langToggle");
-    const title = document.getElementById("intro-title");
-    const text = document.getElementById("intro-text");
-    const cvLink = document.getElementById("cv-link");
+    const langToggle = document.getElementById("langToggle");
+    let currentLang = "es";
   
-    let isSpanish = true;
-  
-    toggleBtn.addEventListener("click", () => {
-      isSpanish = !isSpanish;
-      if (isSpanish) {
-        title.textContent = "Hola, soy Andrés Lizarazo";
-        text.textContent = "Analista de Datos y Científico de Datos";
-        cvLink.textContent = "Descargar CV (ES)";
-        cvLink.href = "CV_Andres_Lizarazo_ES.pdf";
-        toggleBtn.textContent = "EN";
-      } else {
-        title.textContent = "Hi, I'm Andrés Lizarazo";
-        text.textContent = "Data Analyst and Data Scientist";
-        cvLink.textContent = "Download CV (EN)";
-        cvLink.href = "CV_Andres_Lizarazo_EN.pdf";
-        toggleBtn.textContent = "ES";
+    const translations = {
+      es: {
+        title: "Hola, soy Andrés Lizarazo",
+        subtitle: "Analista Comercial y Científico de Datos en Mercado Libre",
+        cvText: "Descargar mi CV en Español",
+        cvFile: "AndresLizarazo_ResumeES.pdf",
+        nav: {
+          sobreMi: "Sobre mí",
+          experiencia: "Experiencia",
+          habilidades: "Habilidades",
+          certificaciones: "Certificaciones",
+          contacto: "Contacto"
+        },
+        toggle: "EN"
+      },
+      en: {
+        title: "Hello, I'm Andrés Lizarazo",
+        subtitle: "Commercial Analyst and Data Scientist at Mercado Libre",
+        cvText: "Download my CV in English",
+        cvFile: "AndresLizarazo_ResumeEN.pdf",
+        nav: {
+          sobreMi: "About Me",
+          experiencia: "Experience",
+          habilidades: "Skills",
+          certificaciones: "Certifications",
+          contacto: "Contact"
+        },
+        toggle: "ES"
       }
+    };
+  
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      const t = translations[currentLang];
+  
+      // Cambiar contenido principal
+      document.getElementById("main-title").textContent = t.title;
+      document.getElementById("main-subtitle").textContent = t.subtitle;
+      const cvLink = document.getElementById("cv-link");
+      cvLink.textContent = t.cvText;
+      cvLink.href = t.cvFile;
+  
+      // Cambiar enlaces del navbar
+      document.getElementById("nav-sobre-mi").textContent = t.nav.sobreMi;
+      document.getElementById("nav-experiencia").textContent = t.nav.experiencia;
+      document.getElementById("nav-habilidades").textContent = t.nav.habilidades;
+      document.getElementById("nav-certificaciones").textContent = t.nav.certificaciones;
+      document.getElementById("nav-contacto").textContent = t.nav.contacto;
+  
+      // Cambiar texto del botón
+      langToggle.textContent = t.toggle;
     });
   });
+  
