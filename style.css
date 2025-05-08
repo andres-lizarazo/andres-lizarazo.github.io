@@ -272,34 +272,60 @@ section h2::after {
   line-height: 1;
 }
 
-.skills-list {
+.skills-categories {
+  display: grid;
+  /* Ajusta el número de columnas según el espacio y preferencia */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Espacio entre categorías */
+}
+
+.skill-category {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease-in-out;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.skill-category h3 {
+  font-size: 1.4em;
+  color: #007bff; /* Color del título de la categoría */
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e9ecef; /* Separador sutil */
+  padding-bottom: 10px;
+}
+
+.skills-items {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  /* Crea columnas responsivas: mínimo 280px de ancho, se ajustan al espacio */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px; /* Espacio entre las tarjetas */
 }
 
-.skills-list li {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 10px; /* Bordes más redondeados para las tarjetas */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
-  text-align: center; /* Centrar el texto dentro de la tarjeta */
-  font-size: 1.05em;
-  color: #485360;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex; /* Para centrar verticalmente si quieres (con align-items) */
-  align-items: center;
-  justify-content: center;
-  min-height: 80px; /* Altura mínima para tarjetas más uniformes */
+.skills-items li {
+  background-color: #e9f5ff; /* Fondo muy claro para cada item */
+  color: #315b7e;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  /* Opcional: si quieres un pequeño borde o icono */
+  /* border-left: 3px solid #007bff; */
 }
 
-.skills-list li:hover {
-  transform: translateY(-8px); /* Levantar la tarjeta al pasar el mouse */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+.skills-items li:last-child {
+  margin-bottom: 0;
+}
+
+/* Para el texto "(Básico)" en AWS Sagemaker, podrías darle un estilo específico */
+.skills-items li .proficiency-basic {
+  font-size: 0.8em;
+  color: #6c757d;
+  margin-left: 5px;
 }
 .certifications-list {
   list-style: none;
