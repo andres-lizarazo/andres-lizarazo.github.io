@@ -1,117 +1,120 @@
-/* styles.css */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-/* Reseteo de márgenes y padding */
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Fondo del header */
-header {
-    background: linear-gradient(135deg, #5c6bc0, #3f51b5);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 5px solid #2c3e50;
+/* Hero principal */
+.hero {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-header .btn {
-    background-color: #ff4081;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+#langToggle {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-header .btn:hover {
-    background-color: #e040fb;
+#langToggle:hover {
+  background: white;
+  color: #4e54c8;
 }
 
-header button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+.hero-content {
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-header button:hover {
-    background-color: #eeeeee;
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-/* Contenido principal */
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-.language-content {
-    max-width: 800px;
-    width: 100%;
-    text-align: center;
-    margin: 20px 0;
+.btn-group .btn {
+  background-color: white;
+  color: #4e54c8;
+  padding: 12px 26px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background 0.3s ease;
 }
 
-.language-content h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+.btn:hover {
+  background-color: #e6e6e6;
 }
 
-.language-content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* Diseño responsivo */
+/* Responsive design */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
 
-    header p {
-        font-size: 1rem;
-    }
+  .hero-content p {
+    font-size: 1rem;
+  }
 
-    .language-content h1 {
-        font-size: 2rem;
-    }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .language-content p {
-        font-size: 1rem;
-    }
+  #langToggle {
+    padding: 6px 14px;
+  }
+}
 
-    .btn {
-        font-size: 0.9rem;
-        padding: 12px 25px;
-    }
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-group .btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
 }
