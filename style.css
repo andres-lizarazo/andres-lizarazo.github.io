@@ -327,6 +327,46 @@ section h2::after {
   color: #6c757d;
   margin-left: 5px;
 }
+
+.competencies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* Centrar la lista */
+  max-width: 750px; /* Ajustar ancho para legibilidad */
+  text-align: left; /* Alinear texto de items a la izquierda */
+}
+
+.competencies-list li {
+  background-color: #ffffff; /* Fondo blanco para cada item */
+  padding: 20px 25px;
+  margin-bottom: 12px; /* Espacio entre items */
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  font-size: 1.1em;
+  color: #34495e; /* Un color azul oscuro/grisáceo */
+  display: flex; /* Para alinear icono y texto */
+  align-items: center; /* Centrar verticalmente icono y texto */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.competencies-list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icono antes de cada competencia (usando pseudo-elemento) */
+/* Necesitarás una librería de iconos como Font Awesome o SVG */
+.competencies-list li::before {
+  /* Ejemplo con un carácter Unicode (puedes usar Font Awesome o SVG) */
+  content: '✓'; /* O '\2713' -> ✓ , '\272A' -> ✪ , '\27A4' -> ➤ */
+  font-family: 'Arial', sans-serif; /* Asegúrate que la fuente soporte el carácter */
+  color: #27ae60; /* Un verde para el checkmark */
+  font-size: 1.4em;
+  margin-right: 15px;
+  line-height: 1; /* Para mejor alineación vertical */
+}
+
+
 .certifications-list {
   list-style: none;
   padding: 0;
