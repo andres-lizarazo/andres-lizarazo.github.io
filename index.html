@@ -11,31 +11,23 @@
 <body>
     <!-- Sección de Bienvenida -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#certificaciones">Certificaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-
-        <div class="header-content">
-            <!-- Versión en Español -->
-            <div id="spanish" class="language-content">
-                <h1>Hola, soy Andrés Lizarazo</h1>
-                <p>Analista Comercial y Científico de Datos en Mercado Libre</p>
-                <a href="AndresLizarazo_ResumeES.pdf" class="btn" download>Descargar mi CV en Español</a>
-            </div>
-
-            <!-- Versión en Inglés -->
-            <div id="english" class="language-content" style="display: none;">
-                <h1>Hello, I'm Andrés Lizarazo</h1>
-                <p>Commercial Analyst and Data Scientist at Mercado Libre</p>
-                <a href="AndresLizarazo_ResumeEN.pdf" class="btn" download>Download my CV in English</a>
-            </div>
-        </div>
+      <nav>
+        <ul>
+          <li><a href="#sobre-mi" id="nav-sobre-mi">Sobre mí</a></li>
+          <li><a href="#experiencia" id="nav-experiencia">Experiencia</a></li>
+          <li><a href="#habilidades" id="nav-habilidades">Habilidades</a></li>
+          <li><a href="#certificaciones" id="nav-certificaciones">Certificaciones</a></li>
+          <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
+        </ul>
+        <!-- Botón de idioma -->
+        <button id="langToggle">EN</button>
+      </nav>
+    
+      <div class="header-content">
+        <h1 id="main-title">Hola, soy Andrés Lizarazo</h1>
+        <p id="main-subtitle">Analista Comercial y Científico de Datos en Mercado Libre</p>
+        <a id="cv-link" href="AndresLizarazo_ResumeES.pdf" class="btn" download>Descargar mi CV en idioma Español</a>
+      </div>
     </header>
 
     <!-- Sección sobre mí -->

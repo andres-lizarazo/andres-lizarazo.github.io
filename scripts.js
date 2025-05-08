@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
       isSpanish = !isSpanish;
       if (isSpanish) {
         title.textContent = "Hola, soy Andrés Lizarazo";
-        text.textContent = "Analista Comercial y Científico de Datos en Mercado Libre";
+        text.textContent = "Analista de Datos y Científico de Datos";
         cvLink.textContent = "Descargar CV (ES)";
         cvLink.href = "CV_Andres_Lizarazo_ES.pdf";
         toggleBtn.textContent = "EN";
       } else {
         title.textContent = "Hi, I'm Andrés Lizarazo";
-        text.textContent = "Commercial Analyst and Data Scientist at Mercado Libre";
+        text.textContent = "Data Analyst and Data Scientist";
         cvLink.textContent = "Download CV (EN)";
         cvLink.href = "CV_Andres_Lizarazo_EN.pdf";
         toggleBtn.textContent = "ES";
