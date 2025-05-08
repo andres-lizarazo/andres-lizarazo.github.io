@@ -273,29 +273,33 @@ section h2::after {
 }
 
 .skills-list {
-  list-style: none; /* Quitar viñetas por defecto */
+  list-style: none;
   padding: 0;
-  margin: 0 auto; /* Centrar la lista si tiene un max-width */
-  max-width: 700px; /* Limitar el ancho de la lista para mejor lectura */
-  text-align: left; /* Alinear el texto de los items a la izquierda */
+  margin: 0;
+  display: grid;
+  /* Crea columnas responsivas: mínimo 280px de ancho, se ajustan al espacio */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; /* Espacio entre las tarjetas */
 }
 
 .skills-list li {
-  background-color: #ffffff; /* Fondo blanco para cada item */
-  border-left: 5px solid #3498db; /* Borde lateral de acento */
-  margin-bottom: 15px; /* Espacio entre items */
-  padding: 18px 25px; /* Espaciado interno */
-  font-size: 1.1em; /* Tamaño de fuente para las habilidades */
-  color: #555; /* Color de texto para las habilidades */
-  border-radius: 0 8px 8px 0; /* Bordes redondeados (excepto el izquierdo) */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px; /* Bordes más redondeados para las tarjetas */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+  text-align: center; /* Centrar el texto dentro de la tarjeta */
+  font-size: 1.05em;
+  color: #485360;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Para centrar verticalmente si quieres (con align-items) */
+  align-items: center;
+  justify-content: center;
+  min-height: 80px; /* Altura mínima para tarjetas más uniformes */
 }
 
 .skills-list li:hover {
-  transform: translateX(5px) scale(1.02); /* Efecto sutil al pasar el mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  border-left-color: #2980b9; /* Oscurecer un poco el borde al pasar el mouse */
+  transform: translateY(-8px); /* Levantar la tarjeta al pasar el mouse */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 .certifications-list {
   list-style: none;
