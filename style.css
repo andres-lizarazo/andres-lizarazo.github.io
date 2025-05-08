@@ -331,41 +331,45 @@ section h2::after {
 .competencies-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto; /* Centrar la lista */
-  max-width: 750px; /* Ajustar ancho para legibilidad */
-  text-align: left; /* Alinear texto de items a la izquierda */
+  margin: 0 auto;
+  max-width: 800px; /* Ancho máximo del contenedor de píldoras */
+  text-align: center; /* Centrar las píldoras si no llenan el ancho */
+
+  /* Para que los elementos <li> se comporten como inline-block y fluyan */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las píldoras pasen a la siguiente línea */
+  justify-content: center; /* Centra las píldoras en la línea */
+  gap: 12px 15px; /* Espacio vertical y horizontal entre píldoras */
 }
 
 .competencies-list li {
-  background-color: #ffffff; /* Fondo blanco para cada item */
-  padding: 20px 25px;
-  margin-bottom: 12px; /* Espacio entre items */
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  font-size: 1.1em;
-  color: #34495e; /* Un color azul oscuro/grisáceo */
-  display: flex; /* Para alinear icono y texto */
-  align-items: center; /* Centrar verticalmente icono y texto */
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  background-color: #5c6bc0; /* Un color índigo o morado suave */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px; /* Píldoras bien redondeadas */
+  font-size: 0.95em; /* Un poco más pequeño para que quepan más */
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  /* display: inline-block; /* No necesario si el ul es flex */
+  /* margin: 5px 7px; /* No necesario si el ul usa gap */
 }
 
 .competencies-list li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #3f51b5; /* Un tono más oscuro al pasar el mouse */
+  transform: translateY(-2px);
 }
 
-/* Icono antes de cada competencia (usando pseudo-elemento) */
-/* Necesitarás una librería de iconos como Font Awesome o SVG */
-.competencies-list li::before {
-  /* Ejemplo con un carácter Unicode (puedes usar Font Awesome o SVG) */
-  content: '✓'; /* O '\2713' -> ✓ , '\272A' -> ✪ , '\27A4' -> ➤ */
-  font-family: 'Arial', sans-serif; /* Asegúrate que la fuente soporte el carácter */
-  color: #27ae60; /* Un verde para el checkmark */
-  font-size: 1.4em;
-  margin-right: 15px;
-  line-height: 1; /* Para mejor alineación vertical */
+/* Media Queries */
+@media (max-width: 768px) {
+  .competencies-list {
+      gap: 10px 12px;
+  }
+  .competencies-list li {
+      font-size: 0.9em;
+      padding: 8px 15px;
+  }
 }
-
 
 .certifications-list {
   list-style: none;
