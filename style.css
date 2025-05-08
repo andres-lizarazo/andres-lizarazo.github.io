@@ -273,30 +273,30 @@ section h2::after {
 }
 
 .skills-list {
-  list-style: none;
+  list-style: none; /* Quitar viñetas por defecto */
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  margin: 0 auto; /* Centrar la lista si tiene un max-width */
+  max-width: 700px; /* Limitar el ancho de la lista para mejor lectura */
+  text-align: left; /* Alinear el texto de los items a la izquierda */
 }
 
 .skills-list li {
-  background-color: var(--secondary-color);
-  color: var(--light-text-color);
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  background-color: #ffffff; /* Fondo blanco para cada item */
+  border-left: 5px solid #3498db; /* Borde lateral de acento */
+  margin-bottom: 15px; /* Espacio entre items */
+  padding: 18px 25px; /* Espaciado interno */
+  font-size: 1.1em; /* Tamaño de fuente para las habilidades */
+  color: #555; /* Color de texto para las habilidades */
+  border-radius: 0 8px 8px 0; /* Bordes redondeados (excepto el izquierdo) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .skills-list li:hover {
-    transform: translateY(-2px);
-    background-color: var(--primary-color);
+  transform: translateX(5px) scale(1.02); /* Efecto sutil al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-left-color: #2980b9; /* Oscurecer un poco el borde al pasar el mouse */
 }
-
 .certifications-list {
   list-style: none;
   padding: 0;
