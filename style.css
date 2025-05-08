@@ -464,93 +464,101 @@ footer a:hover {
     padding: 20px;
   }
 }
-/* Estilos para la nueva sección de Contacto Info */
+
+/* Estilos para la nueva sección de Contacto Info - CENTRADO */
+#contacto .container { /* Aseguramos que el contenedor de la sección pueda centrar su contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los hijos directos del container, incluyendo el h2 y contact-info-grid */
+}
+
+#contacto h2 { /* El título principal de la sección "Contacto" */
+  text-align: center; /* Ya debería estar centrado por las reglas generales de section h2 */
+  margin-bottom: 50px; /* Mantenemos o ajustamos el espacio */
+}
+
 .contact-info-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Una columna por defecto */
-  gap: 30px; /* Espacio entre items */
-  max-width: 500px; /* Limita el ancho para que no se extienda demasiado */
-  margin: 40px auto 0 auto; /* Centra el bloque y le da espacio del título */
-  text-align: left; /* Alineación del texto dentro de cada item */
+  display: flex; /* Cambiamos de grid a flex para centrar los items más fácilmente */
+  flex-direction: column; /* Mantiene la disposición vertical de los items */
+  align-items: center; /* Centra cada .contact-item horizontalmente */
+  gap: 25px; /* Espacio entre items */
+  width: 100%; /* Ocupa el ancho disponible dentro del .container */
+  max-width: 400px; /* Puedes ajustar este ancho máximo para la legibilidad */
+  margin-top: 20px; /* Espacio desde el título de la sección o el párrafo introductorio */
 }
 
 .contact-item {
-  padding-bottom: 20px; /* Un pequeño espacio o borde inferior */
-  border-bottom: 1px solid #e0e0e0; /* Línea divisoria sutil */
+  text-align: center; /* Centra el texto DENTRO de cada .contact-item */
+  width: 100%; /* Para que ocupe el espacio y el centrado funcione bien */
+  padding-bottom: 15px;
+  /* Quitamos el borde inferior si no se desea o se quiere algo más minimalista */
+  /* border-bottom: 1px solid #e0e0e0; */
 }
-.contact-item:last-child {
-  border-bottom: none; /* Sin borde en el último item */
-  padding-bottom: 0;
-}
+/* .contact-item:last-child {
+  border-bottom: none;
+} */
 
-.contact-item h4 {
-  font-size: 0.9rem; /* Tamaño de los labels: LOCATION, PHONE, etc. */
-  font-weight: 700; /* Más grueso, como en la imagen */
+.contact-item h4 { /* Labels: LOCATION, PHONE, EMAIL, SOCIAL */
+  font-size: 0.85rem; /* Ligeramente más pequeño si se prefiere */
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-color); /* O un gris oscuro como #444 */
-  margin-bottom: 10px; /* Espacio entre el label y el valor */
-  letter-spacing: 0.5px; /* Un poco de espacio entre letras */
+  color: #333; /* Un negro o gris muy oscuro para los labels */
+  margin-bottom: 8px;
+  letter-spacing: 0.75px; /* Un poco más de espaciado entre letras */
 }
 
 .contact-item p,
 .contact-item p a {
-  font-size: 1.05rem; /* Tamaño del texto de la información */
-  color: #555; /* Un gris un poco más claro para el valor */
-  line-height: 1.6;
-  text-decoration: none; /* Quitar subrayado por defecto */
+  font-size: 1rem; /* Ajusta según preferencia */
+  color: #666; /* Un gris medio para el valor */
+  line-height: 1.5;
 }
 
 .contact-item p a {
-  color: var(--primary-color); /* Color del enlace (teléfono, email) */
-  text-decoration: underline; /* Subrayado como en la imagen */
-  text-decoration-color: #ccc; /* Un color de subrayado más sutil */
-  text-underline-offset: 4px; /* Espacio entre texto y subrayado */
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-color: #bdbdbd; /* Subrayado más sutil */
+  text-underline-offset: 3px;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 .contact-item p a:hover {
-  color: var(--secondary-color); /* Cambio de color al pasar el mouse */
+  color: var(--secondary-color);
   text-decoration-color: var(--secondary-color);
 }
 
+/* Iconos sociales - Estilo más cercano a la imagen original */
 .social-icons-contact {
   display: flex;
-  gap: 15px; /* Espacio entre iconos sociales */
-  margin-top: 5px; /* Pequeño espacio si viene después de un label */
+  justify-content: center; /* Centra los iconos horizontalmente */
+  gap: 20px; /* Espacio entre iconos */
+  margin-top: 5px;
 }
 
 .social-icons-contact a {
-  display: inline-flex; /* Para centrar el SVG/icono dentro del 'a' */
-  align-items: center;
-  justify-content: center;
-  width: 44px;  /* Tamaño del círculo contenedor del icono */
-  height: 44px; /* Tamaño del círculo contenedor del icono */
-  border-radius: 50%;
-  border: 1px solid #d0d0d0; /* Borde del círculo */
-  color: var(--text-color); /* Color del icono SVG si es 'currentColor' */
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  color: #555; /* Color inicial del icono */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-icons-contact a:hover {
-  background-color: #f0f0f0; /* Un fondo sutil al pasar el mouse */
-  border-color: var(--primary-color);
   color: var(--primary-color); /* Cambia color del icono en hover */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
 .social-icons-contact svg {
-  width: 22px; /* Tamaño del gráfico del icono SVG */
-  height: 22px;
-  /* Si el SVG no toma el color del 'a' en hover, asegúrate que el 'fill' o 'stroke' 
-     del SVG esté puesto a 'currentColor' o que no tenga un color fijo. */
+  width: 28px; /* Tamaño de los iconos, similar a la imagen */
+  height: 28px;
+  /* Si tus SVGs tienen un fill="currentColor" o stroke="currentColor", tomarán el color del 'a' */
 }
 
-
-/* Media query para mejorar la presentación en pantallas más anchas si se quiere */
-@media (min-width: 768px) {
-  .contact-info-grid {
-
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 40px 60px; 
-      text-align: left;   
-  }
+/* Eliminamos el borde circular de los iconos si no lo queremos */
+/* Si antes tenías:
+.social-icons-contact a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #d0d0d0;
 }
+...simplemente comenta o elimina esas propiedades de borde y tamaño fijo del 'a'
+*/
