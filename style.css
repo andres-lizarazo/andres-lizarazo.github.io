@@ -755,3 +755,78 @@ footer a:hover {
       max-height: 350px;
   }
 }
+
+
+/* --- Estilos para la Nueva Sección de Power BI Dashboards --- */
+#powerbi-dashboards {
+  background-color: var(--background-color); /* O el color de fondo que prefieras, similar a otras secciones */
+  padding: 60px 0;
+}
+
+/* El título h2 de la sección usará los estilos generales de 'section h2' */
+
+.dashboards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crea columnas responsivas */
+  gap: 30px; /* Espacio entre los items, similar a highlights-grid */
+}
+
+.dashboard-item {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd; /* Similar a highlight-column */
+  display: flex; /* Para que el enlace ocupe todo el espacio y poder alinear contenido */
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Efecto hover más pronunciado */
+}
+
+.dashboard-item a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del padre */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Asegura que el enlace llene el .dashboard-item */
+  height: 100%; /* Asegura que el enlace ocupe toda la altura */
+}
+
+.dashboard-image {
+  width: 100%;
+  max-height: 200px; /* Ajusta según el tamaño de tus imágenes y cómo quieras que se vean */
+  object-fit: cover; /* 'cover' para llenar, 'contain' para mostrar toda la imagen */
+  border-radius: 4px; /* Bordes redondeados sutiles para la imagen */
+  margin-bottom: 15px;
+  border: 1px solid #eaeaea; /* Borde sutil para la imagen, como en certificate-preview */
+}
+
+.dashboard-title {
+  font-size: 1.3rem; /* Tamaño del título del dashboard */
+  color: var(--primary-color); /* Color primario para el título */
+  margin-top: auto; /* Empuja el título hacia abajo si la imagen es más pequeña */
+  margin-bottom: 0; /* Quita el margen inferior por defecto del h3 */
+  padding-top: 10px; /* Espacio entre imagen y título */
+}
+
+/* Ajustes responsivos para la cuadrícula de dashboards si es necesario */
+@media (max-width: 600px) {
+  .dashboards-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    gap: 20px;
+  }
+  .dashboard-item {
+    padding: 15px;
+  }
+  .dashboard-image {
+    max-height: 180px;
+  }
+  .dashboard-title {
+    font-size: 1.15rem;
+  }
+}
